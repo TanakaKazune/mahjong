@@ -26,4 +26,8 @@ p{
 .header-list a {
 
     color: #fff;
-  }
+}
+
+.login-input{
+    float: left;
+}
