@@ -27,3 +27,7 @@ p{
 
     color: #fff;
   }
+  
+.login-input{
+    float: left;
+}
