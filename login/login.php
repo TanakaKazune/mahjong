@@ -1,4 +1,8 @@
-<?php require_once '../head.php' ?>
+<?php session_start(); ?>
+<?php
+ require_once('../head.php');
+ require_once('../variable.php')
+?>
 
 <div class="login-input">
  <form action="login-output.php" method="post">
@@ -9,4 +13,4 @@
  </form>
 </div>
 
-<?php require_once '../foot.php' ?>
+<?php require_once('../foot.php') ?>

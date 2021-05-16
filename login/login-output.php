@@ -27,4 +27,4 @@ if(isset($_SESSION['user'])){
 
 ?>
 
-<?php require_once '../foot.php' ?>
+<?php require_once('../foot.php') ?>
