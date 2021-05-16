@@ -1,4 +1,5 @@
 <? php
+session_start();
 $pdo = new PDO('mysql:host=localhost;dbname=mahjong_date;charser=utf8','staff','password');
 ?>
 
