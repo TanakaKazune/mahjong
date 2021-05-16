@@ -5,7 +5,7 @@
    <li><a href="">対局</a></li>
    <li><a href="">戦績</a></li>
    <li><a href="">会員登録</a></li>
-   <li><a href="">ログイン</a></li>
+   <li><a href="login/login.php">ログイン</a></li>
    <li><a href="">ログアウト</a></li>
   </ul>
  </div>
