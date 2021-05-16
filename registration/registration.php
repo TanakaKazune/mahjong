@@ -4,7 +4,7 @@
  require_once('../variable.php')
 ?>
 
-<form action="" method="post">
+<form action="registration-output.php" method="post">
  <table>
      <tr>
          <td>氏名</td>
@@ -15,7 +15,7 @@
          <td><input type="password" name="password"></td>
      </tr><br>
  </table>
-    <input type="submit" value="確定">
+ <input type="submit" value="確定">
 </form>
 
 <?php require_once('../foot.php') ?>
