@@ -12,10 +12,13 @@ create table user_information (
 create table battle_management (
 	id int auto_increment primary key, 
 	play_date date not null,
+    point_rate bigint not null,
+    tip_rate bigint not null,
+    people int not null,
     member1 int not null,
     member2 int not null,
     member3 int not null,
-    member4 int not null,
+    member4 int,
 	foreign key(member1) references user_information(id),
     foreign key(member2) references user_information(id),
     foreign key(member3) references user_information(id),
@@ -28,7 +31,7 @@ create table battle_result (
     member1_score bigint not null,
     member2_score bigint not null,
     member3_score bigint not null,
-    member4_score bigint not null,
+    member4_score bigint ,
     foreign key(battle_management_id) references battle_management(id)
 );
 
