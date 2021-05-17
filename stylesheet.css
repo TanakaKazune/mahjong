@@ -15,19 +15,27 @@ li {
 .tittle{
     float: left;
     font-size: 36px;
-    padding: 0px 40px;
+    padding: 10px 40px;
+    margin: 0px 0px;
 }
 
 .header-list li {
     float: left;
-    padding: 33px 20px
+    padding: 33px 20px;
 }
 
 .header-list a {
-
     color: #fff;
 }
 
 .login-input{
     float: left;
+}
+
+.set-game {
+    font-size: 25px;
+}
+
+.new-game {
+    font-size: 25px;
 }
