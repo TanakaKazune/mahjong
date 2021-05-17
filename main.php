@@ -1,5 +1,5 @@
 <div class="header">
-  <p>麻雀成績管理サイト</p>
+  <p class="tittle">麻雀成績管理サイト</p>
  <div class="header-list">
   <ul>
    <li><a href="">対局</a></li>
