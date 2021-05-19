@@ -4,8 +4,8 @@
  require_once('../variable.php');
 ?>
 
-<!--game.phpで得たデータにより表示内容を分岐-->
-<?php switch($_REQUEST['command']): ?>
+<?php switch($_REQUEST['command']): 
+    //game.phpで得たデータにより表示内容を分岐 ?>
 <?php case 'set': ?>
  <?php
   $sql = $pdo->prepare('select * from battle_management where id=?');
@@ -13,7 +13,8 @@
   //リクエストした値をコンストラクタに代入し、データベースの情報を検索
   foreach($sql as $row){
      $_SESSION['user'] = ['game' => $row['id']];
-    } //データベースから取得した値をセッションに代入
+    }
+    //データベースから取得した値をセッションに代入
   $sql = $pdo->prepare('select battle_management.id as id, point_rate, tip_rate, people,
   user1.name as user1, user2.name as user2, user3.name as user3, user4.name as user4
   from battle_management 
