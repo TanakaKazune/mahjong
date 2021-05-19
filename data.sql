@@ -28,6 +28,7 @@ create table battle_management (
 create table battle_result (
 	id int auto_increment primary key, 
     battle_management_id int not null,
+    game int not null,
     member1_score bigint not null,
     member2_score bigint not null,
     member3_score bigint not null,
