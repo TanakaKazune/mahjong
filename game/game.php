@@ -6,7 +6,9 @@
 
 <?php if(!isset($_SESSION['user']['game'])) :?>
  <!--gameセッションが空かを確認し空の場合にセッションを獲得するフローを表示する-->
-  <form action="" method="post">
+  <form action="game-set.php" method="post">
+     <input type="hidden" name="command" value="set">
+      <!--ログインと新規作成のどちらの遷移をしたかの変数を渡す-->
      <div class="set-game">idを入力してゲームにログイン</div>
      <input type="text" name="game-id"><br>
      <input type="submit" value="ログイン"><br>
@@ -14,6 +16,8 @@
  <!--既存のゲームデータを読み込むためのデータを取得-->  
 
   <form action="" method="post">
+     <input type="hidden" name="command" value="create">
+     <!--ログインと新規作成のどちらの遷移をしたかの変数を渡す-->
      <div class="new-game">新規ゲームの作成</div>
      
      <?php date_default_timezone_set('Japan'); ?>
