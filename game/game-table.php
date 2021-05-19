@@ -35,7 +35,7 @@
                echo $count; ?></td>
          <form action="game.php" method="post">
              <input type="hidden" name="command" value="update">
-             <input type="hidden" name="line" value="<?php echo $row['id'] ?>">
+             <input type="hidden" name="line" value="<?php echo $count ?>">
              <td><input type="text" name="score1"
                   value="<?php echo $row['member1_score'] ?>"></td>
              <td><input type="text" name="score2"
@@ -45,12 +45,14 @@
              <?php if($row['people'] = 4): ?>
                  <td><input type="text" name="score4"
                   value="<?php echo $row['member4_score'] ?>"></td>
+             <?php else: ?>
+                 <input type="hidden" name="score4" value="null">
              <?php endif ?>
              <td><input type="submit" value="更新"></td>
          </form>
-         <form action="">
+         <form action="game.php">
              <input type="hidden" name="command" value="delete">
-             <input type="hidden" name="line" value="<?php echo $row['id'] ?>">
+             <input type="hidden" name="line" value="<?php echo $count ?>">
              <td><input type="submit" value="削除"></td>
          </form>
       </tr>
@@ -58,6 +60,8 @@
      <tr>
          <form action="game.php" method="post">
              <input type="hidden" name="command" value="insert">
+             <?php $count++; ?>
+             <input type="hidden" name="line" value="<?php echo $count ?>">
              <td>new</td>
              <td><input type="text" name="score1"></td>
              <td><input type="text" name="score2"></td>
