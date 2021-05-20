@@ -22,7 +22,7 @@
      </tr>
      <?php
       $count = 0;
-      $sql = $pdo->prepare('select battle_result.id as id, member1_score, member2_score, member3_score, member4_score, people
+      $sql = $pdo->prepare('select battle_result.id as id, member1_score, member2_score, member3_score, member4_score, people, game
       from battle_result
       join battle_management
       on battle_result.battle_management_id=battle_management.id
@@ -35,7 +35,7 @@
                echo $count; ?></td>
          <form action="game.php" method="post">
              <input type="hidden" name="command" value="update">
-             <input type="hidden" name="line" value="<?php echo $count ?>">
+             <input type="hidden" name="line" value="<?php echo $row['game'] ?>">
              <td><input type="text" name="score1"
                   value="<?php echo $row['member1_score'] ?>"></td>
              <td><input type="text" name="score2"
@@ -52,7 +52,7 @@
          </form>
          <form action="game.php">
              <input type="hidden" name="command" value="delete">
-             <input type="hidden" name="line" value="<?php echo $count ?>">
+             <input type="hidden" name="line" value="<?php echo $row['game'] ?>">
              <td><input type="submit" value="削除"></td>
          </form>
       </tr>
