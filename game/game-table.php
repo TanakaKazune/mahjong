@@ -105,3 +105,9 @@
          <tr><td><input type="submit" value="半荘データを確定"></td></tr>
      </form>
  </table>
+
+ <br><br>
+ <form action="game.php">
+ <input type="submit" value="半荘からログアウト">
+ <input type="hidden" name="command" value="logout">
+ </form>

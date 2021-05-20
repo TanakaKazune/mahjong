@@ -23,6 +23,9 @@
             $sql->execute([$_SESSION['user']['game'], $_REQUEST['line'], $_REQUEST['score1'],
             $_REQUEST['score2'],$_REQUEST['score3'], $_REQUEST['score4']]);
           break;
+         case 'logout':
+            unset($_SESSION['user']['game']);
+          break;
         }
     }
 ?>
