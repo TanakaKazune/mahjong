@@ -81,7 +81,7 @@
        where battle_management_id=?');
       $sql->execute([$_SESSION['user']['game']]);
      ?>
-     <form action="" method="post">
+     <form action="game-result.php" method="post">
          <tr>
              <?php foreach($sql as $row): ?>
                  <td>合計</td>
