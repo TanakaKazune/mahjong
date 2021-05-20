@@ -7,13 +7,16 @@
 </form><br><br><br>
 <!--既存のゲームデータを読み込むためのデータを取得-->  
 
-  <form action="" method="post">
+  <form action="game-set.php" method="post">
      <input type="hidden" name="command" value="create">
      <!--ログインと新規作成のどちらの遷移をしたかの変数を渡す-->
      <div class="new-game">新規ゲームの作成</div>
      
-     <?php date_default_timezone_set('Japan'); ?>
-     <input type="hidden" name=date value="<?php echo "date(y/m/d)" ?>">
+     <?php
+       date_default_timezone_set('Japan'); 
+       $date = date('y-m-d');
+     ?>
+     <input type="hidden" name=date value="<?php echo $date ?>">
 
      <p>得点のレート</p>
      <select name="point-rate">
