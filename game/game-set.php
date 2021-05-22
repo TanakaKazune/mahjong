@@ -11,9 +11,18 @@
   $sql = $pdo->prepare('select * from battle_management where id=?');
   $sql->execute([$_REQUEST['game-id']]);
   //リクエストした値をコンストラクタに代入し、データベースの情報を検索
-  foreach($sql as $row){
-     $_SESSION['user'] = ['game' => $row['id']];
+  if(isset($_SESSION['user'])){
+    foreach($sql as $row){
+      $_SESSION['user'] = [
+        'id' => $_SESSION['user']['id'],
+        'name' => $_SESSION['user']['name'],
+        'game' => $row['id']];
     }
+  }else{
+    foreach($sql as $row){
+      $_SESSION['user'] = ['game' => $row['id']];
+    }
+  }
     //データベースから取得した値をセッションに代入
   $sql = $pdo->prepare('select battle_management.id as id, point_rate, tip_rate, people,
   user1.name as user1, user2.name as user2, user3.name as user3, user4.name as user4
@@ -76,10 +85,19 @@
         echo "、",$row['user4'];
     }
 
-    foreach($sql as $row){
-      $_SESSION['user'] = ['game' => $row['id']];
+    if(isset($_SESSION['user'])){
+      foreach($sql as $row){
+        $_SESSION['user'] = [
+          'id' => $_SESSION['user']['id'],
+          'name' => $_SESSION['user']['name'],
+          'game' => $row['id']];
+      }
+    }else{
+      foreach($sql as $row){
+        $_SESSION['user'] = ['game' => $row['id']];
+      }
     }
-  } 
+   } 
  ?>
  <br>
  <a href="game.php">ゲーム開始</a>
