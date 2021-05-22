@@ -5,8 +5,6 @@
 ?>
 
 <?php
-unset($_SESSION['user']);
-
 $sql = $pdo->prepare('select * from user_information where id=? and name=? and password=?');
 $sql->execute([$_REQUEST['id'], $_REQUEST['name'], $_REQUEST['password']]);
 //リクエストした値をコンストラクタに代入し、データベースの情報を検索
