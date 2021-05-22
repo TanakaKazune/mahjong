@@ -19,7 +19,7 @@
      $user1 = $row['member1'];
      $user2 = $row['member2'];
      $user3 = $row['member3'];
-     if($row['people'] = 4){
+     if($row['people'] == 4){
         $user4 = $row['member4'];
      }
 
@@ -29,7 +29,7 @@
      $_REQUEST['tip2'] = (int) $_REQUEST['tip2'];
      $_REQUEST['score3'] = (int) $_REQUEST['score3'];
      $_REQUEST['tip3'] = (int) $_REQUEST['tip3'];
-     if($row['people'] = 4){
+     if($row['people'] == 4){
         $_REQUEST['score4'] = (int) $_REQUEST['score4'];
         $_REQUEST['tip4'] = (int) $_REQUEST['tip4'];
      }
@@ -38,7 +38,7 @@
      $money1 = ($_REQUEST['score1']* $point_rate)+($_REQUEST['tip1']*$tip_rate);
      $money2 = ($_REQUEST['score2']*$point_rate)+($_REQUEST['tip2']*$tip_rate);
      $money3 = ($_REQUEST['score3']*$point_rate)+($_REQUEST['tip3']*$tip_rate);
-     if($row['people'] = 4){
+     if($row['people'] == 4){
         $money4 = ($_REQUEST['score4']*$point_rate)+($_REQUEST['tip4']*$tip_rate);
      }
     }
@@ -47,7 +47,7 @@
  $sql->execute([$user1,$_SESSION['user']['game'],$_REQUEST['score1'],$_REQUEST['tip1'],$money1,$people]);
  $sql->execute([$user2,$_SESSION['user']['game'],$_REQUEST['score2'],$_REQUEST['tip2'],$money2,$people]);
  $sql->execute([$user3,$_SESSION['user']['game'],$_REQUEST['score3'],$_REQUEST['tip3'],$money3,$people]);
- if($people = 4){
+ if($people == 4){
     $sql->execute([$user4,$_SESSION['user']['game'],$_REQUEST['score4'],$_REQUEST['tip4'],$money4,$people]);
  }
 

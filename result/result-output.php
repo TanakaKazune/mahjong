@@ -29,7 +29,7 @@
           <td>　<?php echo $row['user1'] ?></td>
           <td>　<?php echo $row['user2'] ?></td>
           <td>　<?php echo $row['user3'] ?></td>
-          <?php if($row['people'] = 4): ?>
+          <?php if($row['people'] == 4): ?>
             <td>　<?php echo $row['user4'] ?></td>
           <?php endif ?>
          <?php endforeach ?> 
@@ -50,7 +50,7 @@
          <td>　<?php echo $row['member1_score'] ?></td>
          <td>　<?php echo $row['member2_score'] ?></td>
          <td>　<?php echo $row['member3_score'] ?></td>
-         <?php if($row['people'] = 4): ?>
+         <?php if($row['people'] == 4): ?>
              <td>　<?php echo $row['member4_score'] ?></td>
          <?php endif ?>
       </tr>
@@ -71,7 +71,7 @@
                  <td>　<?php echo $row['score1'] ?></td>
                  <td>　<?php echo $row['score2'] ?></td>
                  <td>　<?php echo $row['score3'] ?></td>
-                 <?php if($row['people'] = 4): ?>
+                 <?php if($row['people'] == 4): ?>
                   <td>　<?php echo $row['score4'] ?></td>
                  <?php endif ?>
          <?php endforeach ?>

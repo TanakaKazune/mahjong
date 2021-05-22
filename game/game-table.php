@@ -15,7 +15,7 @@
           <td><?php echo $row['user1'] ?></td>
           <td><?php echo $row['user2'] ?></td>
           <td><?php echo $row['user3'] ?></td>
-          <?php if($row['people'] = 4): ?>
+          <?php if($row['people'] == 4): ?>
             <td><?php echo $row['user4'] ?></td>
           <?php endif ?>
          <?php endforeach ?> 
@@ -42,7 +42,7 @@
                   value="<?php echo $row['member2_score'] ?>"></td>
              <td><input type="text" name="score3"
                   value="<?php echo $row['member3_score'] ?>"></td>
-             <?php if($row['people'] = 4): ?>
+             <?php if($row['people'] == 4): ?>
                  <td><input type="text" name="score4"
                   value="<?php echo $row['member4_score'] ?>"></td>
              <?php else: ?>
@@ -66,7 +66,7 @@
              <td><input type="text" name="score1"></td>
              <td><input type="text" name="score2"></td>
              <td><input type="text" name="score3"></td>
-             <?php if($row['people'] = 4): ?>
+             <?php if($row['people'] == 4): ?>
               <td><input type="text" name="score4"></td>
              <?php endif ?>
              <td><input type="submit" value="追加"></td>
@@ -88,7 +88,7 @@
                  <td><input type="text" name="score1" value="<?php echo $row['score1'] ?>"></td>
                  <td><input type="text" name="score2" value="<?php echo $row['score2'] ?>"></td>
                  <td><input type="text" name="score3" value="<?php echo $row['score3'] ?>"></td>
-                 <?php if($row['people'] = 4): ?>
+                 <?php if($row['people'] == 4): ?>
                   <td><input type="text" name="score4" value="<?php echo $row['score4'] ?>"></td>
                  <?php endif ?>
              <?php endforeach ?>
@@ -98,7 +98,7 @@
              <td><input type="text" name="tip1"></td>
              <td><input type="text" name="tip2"></td>
              <td><input type="text" name="tip3"></td>
-             <?php if($row['people'] = 4): ?>
+             <?php if($row['people'] == 4): ?>
                 <td><input type="text" name="tip4"></td>
              <?php endif ?>
          </tr>
