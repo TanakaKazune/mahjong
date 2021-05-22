@@ -5,11 +5,14 @@
 ?>
 
 <?php
+ $sql = $pdo->prepare('select * from user_information where name=? and password=?');
+ $sql->execute([$_REQUEST['name'],$_REQUEST['password']]);
+if(empty($sql->fetchAll())){
  $sql = $pdo->prepare('insert into user_information values(null,?,?)');
  $sql->execute([$_REQUEST['name'],$_REQUEST['password']]);
  echo 'user情報を登録しました。';
  echo '<br>';echo '<br>';
-
+ }
  $sql = $pdo->prepare('select * from user_information where name=? and password=?');
  $sql->execute([$_REQUEST['name'],$_REQUEST['password']]);
  foreach($sql as $row){
@@ -19,7 +22,7 @@
      echo '<br>';
      echo 'パスワード  ',$row['password'];
      echo '<br>';echo '<br>';
- }
+  }
 ?>
 
 <a href="../login/login.php">ログイン画面へ</a>
