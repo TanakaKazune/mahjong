@@ -15,7 +15,7 @@
 <table>
      <tr>
          <?php
-          $sql = $pdo->prepare('select user1.name as user1, user2.name as user2, user3.name as user3, user4.name as user4
+          $sql = $pdo->prepare('select user1.name as user1, user2.name as user2, user3.name as user3, user4.name as user4, people
            from battle_management
            join user_information as user1 on battle_management.member1=user1.id
            join user_information as user2 on battle_management.member2=user2.id
