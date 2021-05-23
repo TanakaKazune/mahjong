@@ -54,7 +54,7 @@
 <?php case 'create': ?>
  <?php
    if(!isset($_SESSION['user']['game'])){
-     if($_REQUEST['people'] = 4){
+     if($_REQUEST['people'] == 4){
       $sql = $pdo->prepare('insert into battle_management values(null,?,?,?,?,?,?,?,?)');
       $sql->execute([$_REQUEST['date'],$_REQUEST['point-rate'],$_REQUEST['tip-rate'],$_REQUEST['people'],
       $_REQUEST['id1'],$_REQUEST['id2'],$_REQUEST['id3'],$_REQUEST['id4']]);
@@ -73,9 +73,9 @@
    join user_information as user3 on battle_management.member3=user3.id
    left join user_information as user4 on battle_management.member4=user4.id
    where play_date=? and point_rate=? and tip_rate=? and
-   member1=? and member2=? and member3=? and member4=?');
+   member1=? and member2=? and member3=?');
    $sql->execute([$_REQUEST['date'],$_REQUEST['point-rate'],$_REQUEST['tip-rate'],
-   $_REQUEST['id1'],$_REQUEST['id2'],$_REQUEST['id3'],$_REQUEST['id4']]);
+   $_REQUEST['id1'],$_REQUEST['id2'],$_REQUEST['id3']]);
    foreach($sql as $row){
     echo "ゲームid　",$row['id'];
     echo '<br>';
