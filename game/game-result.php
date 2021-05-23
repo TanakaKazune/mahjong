@@ -43,6 +43,9 @@
      }
     }
 
+$sql = $pdo->prepare('select * from result_management where user_information_id=? and battle_management_id=? and money=?');
+$sql->execute([$user1,$_SESSION['user']['game'],$money1]);
+if(empty($sql->fetchall())){
  $sql = $pdo->prepare('insert into result_management value(null,?,?,?,?,?,null,?)');
  $sql->execute([$user1,$_SESSION['user']['game'],$_REQUEST['score1'],$_REQUEST['tip1'],$money1,$people]);
  $sql->execute([$user2,$_SESSION['user']['game'],$_REQUEST['score2'],$_REQUEST['tip2'],$money2,$people]);
@@ -50,7 +53,8 @@
  if($people == 4){
     $sql->execute([$user4,$_SESSION['user']['game'],$_REQUEST['score4'],$_REQUEST['tip4'],$money4,$people]);
  }
-
+}
+ 
  $sql = $pdo->prepare('select user_information.name as user, score, tip, money
  from result_management
  join user_information on result_management.user_information_id=user_information.id
@@ -72,9 +76,9 @@
          <td>　<?php echo $row['money'] ?>円</td>
       </tr>
      <?php endforeach ?>
- </table>
+ </table><br>
 
- <?php unset($_SESSION['user']['game']) ?>
-
- <a href="game.php">トップに戻る</a>
+ <form action="game.php">
+ <input type="submit" value="トップに戻る">
+ <input type="hidden" name="command" value="logout">
 <?php require_once('../foot.php') ?>
