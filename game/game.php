@@ -20,9 +20,9 @@
           break;
          case 'insert':
             $sql = $pdo->prepare('select * from battle_result 
-            where battle_management_id=? and game=? and member1_score=? and member2_score=? and member3_score=? and member4_score=?');
+            where battle_management_id=? and game=? and member1_score=? and member2_score=? and member3_score=?');
             $sql->execute([$_SESSION['user']['game'], $_REQUEST['line'], $_REQUEST['score1'],
-            $_REQUEST['score2'],$_REQUEST['score3'], $_REQUEST['score4']]);
+            $_REQUEST['score2'],$_REQUEST['score3']]);
             if(empty($sql->fetchall())){
               $sql = $pdo->prepare('insert into battle_result values(null,?,?,?,?,?,?)');
               $sql->execute([$_SESSION['user']['game'], $_REQUEST['line'], $_REQUEST['score1'],

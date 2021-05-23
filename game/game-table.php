@@ -68,6 +68,8 @@
              <td><input type="text" name="score3"></td>
              <?php if($row['people'] == 4): ?>
               <td><input type="text" name="score4"></td>
+             <?php else: ?>
+              <input type="hidden" name="score4" value="null">
              <?php endif ?>
              <td><input type="submit" value="追加"></td>
          </form>
@@ -90,6 +92,8 @@
                  <td><input type="text" name="score3" value="<?php echo $row['score3'] ?>"></td>
                  <?php if($row['people'] == 4): ?>
                   <td><input type="text" name="score4" value="<?php echo $row['score4'] ?>"></td>
+                 <?php else: ?>
+                  <input type="hidden" name="score4" value="null">
                  <?php endif ?>
              <?php endforeach ?>
          </tr>
